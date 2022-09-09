@@ -52,14 +52,19 @@ export default function Login({setIsLogin}) {
            <div className="login create-note">
                 <h2>Login</h2>
                 <form onSubmit={loginSubmit}>
+
+                    <div className='inputBox'>
                     <input type="email" name="email" id="login-email"
                     placeholder="Email" required value={user.email}
                     onChange={onChangeInput} />
+                    </div>
 
+                    <div className='inputBox'>
                     <input type="password" name="password" id="login-password"
                     placeholder="Password" required value={user.password}
                     autoComplete="true"
                     onChange={onChangeInput} />
+                    </div>
 
                     <button type="submit">Login</button>
                     <p>You don't have an account?
@@ -71,17 +76,24 @@ export default function Login({setIsLogin}) {
            <div className="register create-note" style={style}>
            <h2>Register</h2>
                 <form onSubmit={registerSubmit}>
+                    
+                    <div className='inputBox'>
                     <input type="text" name="name" id="register-name"
                     placeholder="User Name" required value={user.name}
                     onChange={onChangeInput} />
+                    </div>
 
+                    <div className='inputBox'>
                     <input type="email" name="email" id="register-email"
                     placeholder="Email" required value={user.email}
                     onChange={onChangeInput} />
+                    </div>
 
+                    <div className='inputBox'>
                     <input type="password" name="password" id="register-password"
                     placeholder="Password" required value={user.password}
                     autoComplete="true" onChange={onChangeInput} />
+                    </div>
 
                     <button type="submit">Register</button>
                     <p>You have an account?

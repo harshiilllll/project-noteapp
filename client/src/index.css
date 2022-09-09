@@ -2,8 +2,8 @@
   padding: 0;
   box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,20 +11,20 @@
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-body{
+body {
   /* background: rgb(63,9,63); */
-  background-color: #202124;
+  background-color: #222831;
 }
-.notes-page{
+.notes-page {
   width: 100%;
   min-height: 100vh;
   color: whitesmoke;
 }
-.notes-page header{
+.notes-page header {
   max-width: 1920px;
   min-height: 100px;
   overflow: hidden;
@@ -34,41 +34,50 @@ body{
   justify-content: space-around;
   align-items: center;
 }
-a{
+a {
   text-decoration: none;
   color: whitesmoke;
 }
-.notes-page header .logo{
+.notes-page header .logo {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-.notes-page header ul li{
+.notes-page header ul li {
   list-style: none;
   display: inline-block;
   padding: 0 15px;
 }
-.notes-page header ul li a{
+.notes-page header ul li a {
   text-transform: uppercase;
   opacity: 0.7;
 }
-.notes-page header ul li a:hover{
+
+.notes-page header ul:nth-child(3) a {
+  color: #5f85db;
+}
+
+.notes-page header ul li a:hover {
   opacity: 1;
 }
-.notes-page section{
+.notes-page section {
   width: 100%;
   padding: 20px 0;
 }
-.note-wrapper{
+.note-wrapper {
   max-width: 1920px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: auto;
 }
-.card{
+.card {
   width: 300px;
-  background: transparent;
-  border: 1px solid #aaa;
+  background: rgba(0, 53, 79, 0.307);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.6px);
+  -webkit-backdrop-filter: blur(11.6px);
+  border: 1px solid rgba(0, 73, 109, 0.94);
   border-radius: 6px;
   padding: 10px;
   position: relative;
@@ -77,26 +86,26 @@ a{
   cursor: pointer;
 }
 
-.card:hover{
+.card:hover {
   border: 1px solid #eee;
 }
-.card:hover a{
+.card:hover a {
   border: 1px solid #eee;
   padding: 4px 5px;
   border-radius: 4px;
 }
 
-.card:hover .close{
+.card:hover .close {
   display: block;
   color: #fff;
 }
 
-.card a:hover{
+.card a:hover {
   background-color: #eee;
   color: #333;
 }
 
-.card .close{
+.card .close {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -108,13 +117,13 @@ a{
   color: #aaa;
   display: none;
 }
-.card h4{
+.card h4 {
   margin-right: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.card .text-wrapper{
+.card .text-wrapper {
   width: 100%;
   height: 150px;
   display: -webkit-box;
@@ -124,11 +133,12 @@ a{
   margin: 10px 0;
   color: #fff9;
 }
-.card .date{
+.card .date {
   text-align: right;
-  color: wheat;
+  color: #00dfc4;
+  opacity: 0.9;
 }
-.card-footer{
+.card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -139,51 +149,90 @@ a{
   font-size: 12px;
 }
 /* ******* Create Note******************* */
-.create-note{
+.create-note {
   max-width: 500px;
   width: 100%;
   margin: auto;
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 30px;
+  background: rgba(0, 53, 79, 0.307);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.6px);
+  -webkit-backdrop-filter: blur(11.6px);
+  border: 1px solid rgba(0, 73, 109, 0.94);
 }
-.create-note h2{
+.create-note h2 {
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 10px 0;
 }
-.create-note .row{
+.create-note .row {
   width: 100%;
   margin: 10px 0;
 }
 .create-note input,
-.create-note button{
+.create-note button {
   width: 100%;
   height: 40px;
-  padding:  0 10px;
+  padding: 0 10px;
   outline: none;
-  background-color: #eee;
+  background-color: white;
   border-radius: 4px;
   border: 1px solid #aaa;
 }
 
-.create-note input:focus,
-.create-note button:focus{
-  width: 100%;
-  height: 40px;
-  padding:  0 10px;
-  outline: none;
-  background-color: #fff;
-  border-radius: 4px;
-  border: 1px solid #fff;
+.create-note button {
+  background-color: red;
+  color: white;
+  transition: all 0.5s;
+  position: relative;
 }
 
-.create-note label{
+.create-note button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+
+.create-note button:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+
+.create-note button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transform: scale(1.2, 1.2);
+}
+
+.create-note button:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.create-note label {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 2px;
+  font-size: 14px;
 }
-.create-note textarea{
+.create-note textarea {
   width: 100%;
   resize: none;
   padding: 0 5px;
@@ -192,59 +241,106 @@ a{
   border-radius: 4px;
   border: 1px solid #aaa;
 }
-.create-note textarea:focus{
+.create-note textarea:focus {
   background-color: #fff;
 }
-.create-note button{
+.create-note button {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 2px;
 }
-.create-note button:hover,
-.create-note button:active{
-  background-color: #333;
-  color: #fff;
-}
-@media (max-width: 500px){
-  .create-note{
+
+@media (max-width: 500px) {
+  .create-note {
     padding: 15px;
     border: 1px solid #ccc;
   }
 }
 
 /* *********Login / Register******* */
-.login-page{
+.login-page {
   position: relative;
   width: 100%;
   min-height: 100vh;
 }
-.login input,
-.register input{
-  margin-bottom: 15px;
-}
+
 .login,
-.register{
+.register {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #141517;
+  background-color: #0c2233;
 }
 .login-page h2,
-.login-page h3{
+.login-page h3 {
   color: #ddd;
 }
-.login-page h3{
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 15px;
+.login-page h3 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 15px;
 }
-.login-page p{
+.login-page p {
   margin: 10px 0;
   color: white;
 }
-.login-page span:hover{
-  color: orange;
+.login-page span:hover {
+  color: #00dfc4;
   cursor: pointer;
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+  margin-block: 20px;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #1d2b3a;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  font-size: 1em;
+  transition: 0.5s;
+}
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+  color: #00dfc4;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: #1d2b3a;
+  border-left: 1px solid #00dfc4;
+  border-right: 1px solid #00dfc4;
+  letter-spacing: 0.2em;
+}
+
+.inputBox:nth-child(2) input:valid ~ span,
+.inputBox:nth-child(2) input:focus ~ span {
+  background: #00dfc4;
+  color: #1d2b3a;
+  border-radius: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+  border: 1px solid #00dfc4;
 }
