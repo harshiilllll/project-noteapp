@@ -229,11 +229,11 @@ a{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #2b2d31;
+  background: #141517;
 }
 .login-page h2,
 .login-page h3{
-  color: #fff8;
+  color: #ddd;
 }
 .login-page h3{
     text-align: center;
